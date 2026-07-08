@@ -2,7 +2,7 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 const request = require('supertest');
 
-const { createApp } = require('../src/app');
+const { createApp } = require('../../src/app');
 
 const standardApplication = {
   propertyValue: 300000,

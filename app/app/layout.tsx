@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mortgage Product Calculator",
+  title: "Mortgage Calculator",
   description: "Find matching mortgage products from customer details.",
 };
 

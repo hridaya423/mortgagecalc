@@ -11,7 +11,10 @@ type MatchedProductsProps = {
 
 function ProductSkeleton() {
   return (
-    <div className="rounded-[12px] border border-zinc-200 bg-white p-4">
+    <div
+      data-testid="product-skeleton"
+      className="rounded-[12px] border border-zinc-200 bg-white p-4"
+    >
       <div className="grid grid-cols-[1fr_64px_64px] items-center gap-4">
         <div className="flex flex-col gap-2">
           <Skeleton className="h-4 w-44" />

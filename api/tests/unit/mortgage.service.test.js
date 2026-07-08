@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 const test = require('node:test');
 
-const { calculateMatchingProducts } = require('../src/services/mortgage.service');
+const { calculateMatchingProducts } = require('../../src/services/mortgage.service');
 
 const standardApplication = {
   propertyValue: 300000,

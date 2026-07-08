@@ -15,6 +15,13 @@ API runs at `http://localhost:4000` by default.
 npm test
 ```
 
+Unit tests and integration tests are split:
+
+```bash
+npm run test:unit
+npm run test:integration
+```
+
 ## Architecture
 
 ![MVC diagram](./docs/diagram.svg)

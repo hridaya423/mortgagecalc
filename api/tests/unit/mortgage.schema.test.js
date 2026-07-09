@@ -2,13 +2,7 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 
 const { validateCalculateProductsRequest } = require('../../src/schemas/mortgage.schema');
-
-const standardApplication = {
-  propertyValue: 300000,
-  deposit: 60000,
-  employmentStatus: 'Employed',
-  creditScoreRating: 'Good',
-};
+const standardApplication = require('./constants').standardApplication;
 
 test('normalizes valid numeric input', () => {
   const input = validateCalculateProductsRequest({

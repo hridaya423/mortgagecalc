@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 
 const { createMortgageController } = require('../../src/controllers/mortgage.controller');
+const requestBody = require('./constants').requestBody;
 
 function createResponse() {
   const res = {};
@@ -21,12 +22,6 @@ function createResponse() {
 }
 
 test('calculate validates the request and returns matching products', async () => {
-  const requestBody = {
-    propertyValue: 300000,
-    deposit: 60000,
-    employmentStatus: 'Employed',
-    creditScoreRating: 'Good',
-  };
   const validatedInput = { ...requestBody };
   const serviceResult = {
     loanAmount: 240000,

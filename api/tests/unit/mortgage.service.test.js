@@ -2,28 +2,11 @@ const assert = require('node:assert/strict');
 const test = require('node:test');
 
 const { calculateMatchingProducts } = require('../../src/services/mortgage.service');
-
-const standardApplication = {
-  propertyValue: 300000,
-  deposit: 60000,
-  employmentStatus: 'Employed',
-  creditScoreRating: 'Good',
-};
+const testProduct = require('./constants').testProduct;
+const standardApplication = require('./constants').standardApplication;
 
 function productNames(result) {
   return result.products.map((product) => product.name);
-}
-
-function testProduct(overrides = {}) {
-  return {
-    id: 'test-product',
-    name: 'Test Product',
-    maxLtv: 80,
-    employment: ['Employed'],
-    minCredit: 'Good',
-    interestRate: '4.00%',
-    ...overrides,
-  };
 }
 
 test('calculates loan amount and LTV', async () => {

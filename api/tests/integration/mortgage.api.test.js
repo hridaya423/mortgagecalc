@@ -26,6 +26,16 @@ test('GET /health returns ok', async () => {
   assert.deepEqual(response.body, { status: 'ok' });
 });
 
+test('OPTIONS /api/mortgage/calculate allows local frontend origins', async () => {
+  const response = await api()
+    .options('/api/mortgage/calculate')
+    .set('Origin', 'http://localhost:3001')
+    .set('Access-Control-Request-Method', 'POST');
+
+  assert.equal(response.status, 204);
+  assert.equal(response.headers['access-control-allow-origin'], 'http://localhost:3001');
+});
+
 test('POST /api/mortgage/calculate returns the API response contract', async () => {
   const response = await api()
     .post('/api/mortgage/calculate')
